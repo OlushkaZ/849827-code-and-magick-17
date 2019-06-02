@@ -181,12 +181,9 @@
   </div>
 </template>
 <script>
-var fireballSize = 32;
+var fireballSize = 22;
 var getFireballSpeed = function(left){
-  if(left === true){
-    return 5;
-  }
-  return 2;
+  return left ? 5 : 2;
 };
 var wizardSpeed = 3;
 var wizardWidth  = 70;
