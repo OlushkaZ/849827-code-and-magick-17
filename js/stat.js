@@ -11,6 +11,8 @@ var FONT_GAP = 16;
 var BAR_HEIGHT = 150;
 var BAR_WIDTH = 40;
 var BAR_GAP = 50;
+var distanceX = Cloud.x + GAP;
+var distanceY = Cloud.y + GAP;
 
 var drawRect = function (ctx, x, y, width, height, color) {
   ctx.fillStyle = color || '#000000';
@@ -36,10 +38,10 @@ var getMaxElement = function (arr) {
 };
 
 window.renderStatistics = function (ctx, names, times) {
-  drawRect(ctx, Cloud.x + GAP, Cloud.y + GAP, Cloud.width, Cloud.height, 'rgba(0, 0, 0, 0.7)');
+  drawRect(ctx, distanceX, distanceY, Cloud.width, Cloud.height, 'rgba(0, 0, 0, 0.7)');
   drawRect(ctx, Cloud.x, Cloud.y, Cloud.width, Cloud.height, '#fff');
-  drawText(ctx, 'Ура вы победили!', Cloud.x + GAP, Cloud.y + GAP * 2 + FONT_GAP, '16px PT Mono');
-  drawText(ctx, 'Список результатов:', Cloud.x + GAP, Cloud.y + GAP + (GAP + FONT_GAP) * 2);
+  drawText(ctx, 'Ура вы победили!', distanceX, Cloud.y + GAP * 2 + FONT_GAP, '16px PT Mono');
+  drawText(ctx, 'Список результатов:', distanceX, distanceY + (GAP + FONT_GAP) * 2);
   var maxTime = getMaxElement(times);
   var bottomOfBar = Cloud.y + GAP * 2 + (GAP + FONT_GAP) * 3 + BAR_HEIGHT;
   var colorCloud;
